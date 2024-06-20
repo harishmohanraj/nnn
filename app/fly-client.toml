@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for nnn-1806b55b-6b1a-4157-abac-e44b7a68c492-client on 2024-06-20T06:37:31+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'nnn-1806b55b-6b1a-4157-abac-e44b7a68c492-client'
+primary_region = 'mia'
+
+[build]
+
+[http_service]
+  internal_port = 8043
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
